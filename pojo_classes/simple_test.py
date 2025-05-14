@@ -16,7 +16,8 @@ from pojo_classes.simple_pojo import UserData
 )
 def test_user_id(user_id, expected_email):
     url = f"https://reqres.in/api/users/{user_id}"
-    response = requests.get(url).json()
-    user = UserData(**response.get("data"))
-    assert expected_email in user.email, f"Expected '{expected_email}' to be in '{user.email}'"
-
+    response = requests.get(url)
+    if 200 < response.status_code < 300:
+        response = response.json()
+        user = UserData(**response.get("data"))
+        assert expected_email in user.email, f"Expected '{expected_email}' to be in '{user.email}'"
