@@ -1,9 +1,9 @@
 import pytest
 
-from automation_project.utils.exceptions_and_context_managers import Item
-from automation_project.utils.exceptions_and_context_managers import safe_divide
-from automation_project.utils.greeting import say_hello
-from automation_project.utils.task_type import length_or_negative
+from module_1.utils.exceptions_and_context_managers import Item
+from module_1.utils.exceptions_and_context_managers import safe_divide
+from module_1.utils.greeting import say_hello
+from module_1.utils.task_type import length_or_negative
 
 
 def test_greeting():
